@@ -1,4 +1,5 @@
 import { BaseEntity, Column, PrimaryGeneratedColumn, Entity } from "typeorm";
+import { IsOptional } from "class-validator";
 
 @Entity()
 export class Profile extends BaseEntity {
@@ -7,71 +8,94 @@ export class Profile extends BaseEntity {
     id: number;
     
     @Column()
+    @IsOptional()
     name: string;
     
     @Column()
-    dob: string;
-    
-    @Column()
+    @IsOptional()
     age: number;
     
-    @Column()
-    birth_time: string;
+    // @Column()
+    // @IsOptional()
+    // dob: string;
+
+    // @Column()
+    // @IsOptional()
+    // birth_time: string;
     
-    @Column()
-    birth_place: string;
+    // @Column()
+    // @IsOptional()
+    // birth_place: string;
     
-    @Column()
-    religion: string;
+    // @Column()
+    // @IsOptional()
+    // religion: string;
     
-    @Column()
-    caste: string;
+    // @Column()
+    // @IsOptional()
+    // caste: string;
     
-    @Column()
-    subcaste: string;
+    // @Column()
+    // @IsOptional()
+    // subcaste: string;
     
-    @Column()
-    gothram: string;
+    // @Column()
+    // @IsOptional()
+    // gothram: string;
     
-    @Column()
-    star: string;
+    // @Column()
+    // @IsOptional()
+    // star: string;
     
-    @Column()
-    qualification: string;
+    // @Column()
+    // @IsOptional()
+    // qualification: string;
     
-    @Column()
-    job: string;
+    // @Column()
+    // @IsOptional()
+    // job: string;
     
-    @Column()
-    work_place: string;
+    // @Column()
+    // @IsOptional()
+    // work_place: string;
     
-    @Column()
-    income: string;
+    // @Column()
+    // @IsOptional()
+    // income: string;
     
-    @Column()
-    height: number;
+    // @Column()
+    // @IsOptional()
+    // height: number;
     
-    @Column()
-    weight: number;
+    // @Column()
+    // @IsOptional()
+    // weight: number;
     
-    @Column()
-    mother_tongue: string;
+    // @Column()
+    // @IsOptional()
+    // mother_tongue: string;
     
-    @Column()
-    known_language: string;
+    // @Column()
+    // @IsOptional()
+    // known_language: string;
     
-    @Column()
-    nativity: string;
+    // @Column()
+    // @IsOptional()
+    // nativity: string;
     
-    @Column()
-    marital_status: string;
+    // @Column()
+    // @IsOptional()
+    // marital_status: string;
     
-    @Column()
-    talents: string;
+    // @Column()
+    // @IsOptional()
+    // talents: string;
     
-    @Column()
-    vehicle_driving: string;
+    // @Column()
+    // @IsOptional()
+    // vehicle_driving: string;
     
-    @Column()
-    disabilities: string
+    // @Column()
+    // @IsOptional()
+    // disabilities: string
 }
