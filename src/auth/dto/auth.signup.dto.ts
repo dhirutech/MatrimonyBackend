@@ -1,4 +1,4 @@
-import { IsString, MinLength, MaxLength } from 'class-validator';
+import { IsString, MinLength, MaxLength, IsOptional } from 'class-validator';
 
 export class AuthSignupDto {
     @IsString()
@@ -9,4 +9,8 @@ export class AuthSignupDto {
     age: number;
 
     dob: string;
+
+    password: string;
+
+    birth_time: string;
 }

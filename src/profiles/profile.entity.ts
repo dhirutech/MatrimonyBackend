@@ -1,7 +1,8 @@
-import { BaseEntity, Column, PrimaryGeneratedColumn, Entity } from "typeorm";
+import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique } from "typeorm";
 import { IsOptional } from "class-validator";
 
 @Entity()
+@Unique(['name'])
 export class Profile extends BaseEntity {
     
     @PrimaryGeneratedColumn()
@@ -15,13 +16,17 @@ export class Profile extends BaseEntity {
     @IsOptional()
     age: number;
     
-    // @Column()
-    // @IsOptional()
-    // dob: string;
+    @Column()
+    @IsOptional()
+    dob: string;
 
-    // @Column()
-    // @IsOptional()
-    // birth_time: string;
+    @Column()
+    @IsOptional()
+    password: string;
+    
+    @Column()
+    @IsOptional()
+    birth_time: string;
     
     // @Column()
     // @IsOptional()
