@@ -7,19 +7,32 @@ import { AuthSigninDto } from "./dto/auth.signin.dto";
 
 @EntityRepository(Profile)
 export class UserRepository extends Repository<Profile> {
+
     async signUp(authSignupDto: AuthSignupDto): Promise<void> {
         const profile = new Profile();
+
+        const { email, contact_main } = authSignupDto;
+
         profile.name = authSignupDto.name;
-        profile.age = authSignupDto.age;
-        profile.dob = authSignupDto.dob;
+        profile.email = authSignupDto.email;
         profile.password = authSignupDto.password;
-        profile.birth_time = authSignupDto.birth_time;
+        profile.contact_main = authSignupDto.contact_main;
+
 
         try {
             await profile.save()
         } catch (error) {
             if(error.code == '23505') {
-                throw new ConflictException('already exists');
+                
+                const email_exist = await this.findOne({ email });
+                const contact_exist = await this.findOne({ contact_main });
+                
+                if(email_exist) {
+                    throw new ConflictException('Email already exists');
+                }
+                if(contact_exist) {
+                    throw new ConflictException('Contact number already exists');
+                }
             } else {
                 throw new InternalServerErrorException();
             }

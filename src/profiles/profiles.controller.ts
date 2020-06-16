@@ -1,9 +1,11 @@
-import { Controller, Get, Param, Query, ValidationPipe, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param, Query, ValidationPipe, ParseIntPipe, UseGuards } from '@nestjs/common';
 import { ProfilesService } from './profiles.service';
 import { GetProfilesFilterDto } from './dto/get-profiles-filter.dto';
 import { Profile } from './profile.entity';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('profiles')
+@UseGuards(AuthGuard())
 export class ProfilesController {
     constructor(private profilesService: ProfilesService) { }
 

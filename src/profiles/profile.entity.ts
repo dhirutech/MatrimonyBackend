@@ -2,105 +2,239 @@ import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique } from "type
 import { IsOptional } from "class-validator";
 
 @Entity()
-@Unique(['name'])
+@Unique(['email', 'contact_main'])
 export class Profile extends BaseEntity {
     
+
+    // For storing personal details
+
     @PrimaryGeneratedColumn()
     id: number;
     
-    @Column()
-    @IsOptional()
+    @Column({ nullable: true })
     name: string;
-    
-    @Column()
-    @IsOptional()
-    age: number;
-    
-    @Column()
-    @IsOptional()
-    dob: string;
 
-    @Column()
-    @IsOptional()
+    @Column({ nullable: true })
+    email: string;
+
+    @Column({ nullable: true })
     password: string;
     
-    @Column()
-    @IsOptional()
+    @Column({ nullable: true })
+    gender: string;
+
+    @Column({ nullable: true })
+    age: number;
+    
+    @Column({ nullable: true })
+    dob: string;
+
+    @Column({ nullable: true })
     birth_time: string;
     
-    // @Column()
-    // @IsOptional()
-    // birth_place: string;
+    @Column({ nullable: true })
+    birth_place: string;
     
-    // @Column()
-    // @IsOptional()
-    // religion: string;
+    @Column({ nullable: true })
+    religion: string;
     
-    // @Column()
-    // @IsOptional()
-    // caste: string;
+    @Column({ nullable: true })
+    caste: string;
     
-    // @Column()
-    // @IsOptional()
-    // subcaste: string;
+    @Column({ nullable: true })
+    subcaste: string;
     
-    // @Column()
-    // @IsOptional()
-    // gothram: string;
+    @Column({ nullable: true })
+    gothram: string;
     
-    // @Column()
-    // @IsOptional()
-    // star: string;
+    @Column({ nullable: true })
+    star: string;
     
-    // @Column()
-    // @IsOptional()
-    // qualification: string;
+    @Column({ nullable: true })
+    qualification: string;
     
-    // @Column()
-    // @IsOptional()
-    // job: string;
+    @Column({ nullable: true })
+    job: string;
     
-    // @Column()
-    // @IsOptional()
-    // work_place: string;
+    @Column({ nullable: true })
+    workplace: string;
     
-    // @Column()
-    // @IsOptional()
-    // income: string;
+    @Column({ nullable: true })
+    income: string;
     
-    // @Column()
-    // @IsOptional()
-    // height: number;
+    @Column({ nullable: true })
+    height: number;
     
-    // @Column()
-    // @IsOptional()
-    // weight: number;
+    @Column({ nullable: true })
+    weight: number;
     
-    // @Column()
-    // @IsOptional()
-    // mother_tongue: string;
+    @Column({ nullable: true })
+    mother_tongue: string;
     
-    // @Column()
-    // @IsOptional()
-    // known_language: string;
+    @Column({ nullable: true })
+    known_language: string;
     
-    // @Column()
-    // @IsOptional()
-    // nativity: string;
+    @Column({ nullable: true })
+    nativity: string;
     
-    // @Column()
-    // @IsOptional()
-    // marital_status: string;
+    @Column({ nullable: true })
+    marital_status: string;
     
-    // @Column()
-    // @IsOptional()
-    // talents: string;
+    @Column({ nullable: true })
+    talents: string;
     
-    // @Column()
-    // @IsOptional()
-    // vehicle_driving: string;
+    @Column({ nullable: true })
+    hobbies: string;
     
-    // @Column()
-    // @IsOptional()
-    // disabilities: string
+    @Column({ nullable: true })
+    vehicle_driving: string;
+    
+    @Column({ nullable: true })
+    disabilities: string;
+
+
+    // Horoscope details
+
+    // Rasi
+    
+    @Column({ nullable: true })
+    rasibox11: string;
+    
+    @Column({ nullable: true })
+    rasibox12: string;
+    
+    @Column({ nullable: true })
+    rasibox13: string;
+    
+    @Column({ nullable: true })
+    rasibox14: string;
+    
+    @Column({ nullable: true })
+    rasibox15: string;
+    
+    @Column({ nullable: true })
+    rasibox16: string;
+    
+    @Column({ nullable: true })
+    rasibox17: string;
+    
+    @Column({ nullable: true })
+    rasibox18: string;
+    
+    @Column({ nullable: true })
+    rasibox19: string;
+    
+    @Column({ nullable: true })
+    rasibox110: string;
+    
+    @Column({ nullable: true })
+    rasibox111: string;
+    
+    @Column({ nullable: true })
+    rasibox112: string;
+    
+    // Navamsam
+    
+    @Column({ nullable: true })
+    rasibox21: string;
+    
+    @Column({ nullable: true })
+    rasibox22: string;
+    
+    @Column({ nullable: true })
+    rasibox23: string;
+    
+    @Column({ nullable: true })
+    rasibox24: string;
+    
+    @Column({ nullable: true })
+    rasibox25: string;
+    
+    @Column({ nullable: true })
+    rasibox26: string;
+    
+    @Column({ nullable: true })
+    rasibox27: string;
+    
+    @Column({ nullable: true })
+    rasibox28: string;
+    
+    @Column({ nullable: true })
+    rasibox29: string;
+    
+    @Column({ nullable: true })
+    rasibox210: string;
+    
+    @Column({ nullable: true })
+    rasibox211: string;
+    
+    @Column({ nullable: true })
+    rasibox212: string;
+
+
+
+    // For storing family details
+
+    @Column({ nullable: true })
+    father_name: string;
+    
+    @Column({ nullable: true })
+    father_occupation: string;
+    
+    @Column({ nullable: true })
+    mother_name: string;
+    
+    @Column({ nullable: true })
+    mother_occupation: string;
+    
+    @Column({ nullable: true })
+    contact_main: number;
+    
+    @Column({ nullable: true })
+    contact_sup: number;
+    
+    @Column({ nullable: true })
+    sibiling_count: number;
+    
+    @Column({ nullable: true })
+    family_status: string;
+    
+    @Column({ nullable: true })
+    properties: string;
+    
+    @Column({ nullable: true })
+    other_details: string;
+
+
+    // Partner Expectations
+
+    @Column({ nullable: true })
+    expected_qualification: string;
+    
+    @Column({ nullable: true })
+    expected_place: string;
+    
+    @Column({ nullable: true })
+    expected_income: string;
+    
+    @Column({ nullable: true })
+    expected_caste: string;
+    
+    @Column({ nullable: true })
+    expected_subcaste: string;
+    
+    @Column({ nullable: true })
+    expected_marital_status: string;
+    
+    @Column({ nullable: true })
+    age_difference: string;
+    
+    @Column({ nullable: true })
+    expected_height: string;
+    
+    @Column({ nullable: true })
+    expected_weight: string;
+    
+    @Column({ nullable: true })
+    expectations: string;
 }
