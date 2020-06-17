@@ -1,8 +1,7 @@
 import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique } from "typeorm";
-import { IsOptional } from "class-validator";
 
 @Entity()
-@Unique(['email', 'contact_main'])
+@Unique(['email'])
 export class Profile extends BaseEntity {
     
 
@@ -62,11 +61,11 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     income: string;
     
-    @Column({ nullable: true })
-    height: number;
+    @Column({ nullable: true, type: 'real' })
+    height: string;
     
-    @Column({ nullable: true })
-    weight: number;
+    @Column({ nullable: true, type: 'real' })
+    weight: string;
     
     @Column({ nullable: true })
     mother_tongue: string;
@@ -187,7 +186,7 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     mother_occupation: string;
     
-    @Column({ nullable: true })
+    @Column({ nullable: false })
     contact_main: number;
     
     @Column({ nullable: true })
@@ -229,10 +228,10 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     age_difference: string;
     
-    @Column({ nullable: true })
+    @Column({ nullable: true, type: 'real' })
     expected_height: string;
     
-    @Column({ nullable: true })
+    @Column({ nullable: true, type: 'real' })
     expected_weight: string;
     
     @Column({ nullable: true })

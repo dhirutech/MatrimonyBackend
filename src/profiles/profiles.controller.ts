@@ -9,15 +9,10 @@ import { AuthGuard } from '@nestjs/passport';
 export class ProfilesController {
     constructor(private profilesService: ProfilesService) { }
 
-    // @Get()
-    // getProfiles(@Query(ValidationPipe) filterDto: GetProfilesFilterDto): Profile[] {
-    //     if(Object.keys(filterDto).length) {
-    //         return this.profilesService.getProfilesWithFilters(filterDto);
-    //     } 
-    //     else {
-    //         return this.profilesService.getAllProfiles();
-    //     }
-    // }
+    @Get()
+    getProfiles(@Query(ValidationPipe) filterDto: GetProfilesFilterDto): Promise<Profile[]> {
+        return this.profilesService.getProfiles(filterDto);
+    }
 
     @Get('/:id')
     getProfileById(@Param('id', ParseIntPipe) id: number ): Promise<Profile> {

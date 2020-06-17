@@ -30,6 +30,7 @@
     "@nestjs/typeorm": "^7.1.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
+    "logger": "0.0.1",
     "nestjs-dotenv": "^1.2.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",

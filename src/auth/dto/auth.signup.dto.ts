@@ -1,4 +1,4 @@
-import { IsString, MinLength, MaxLength, IsOptional } from 'class-validator';
+import { IsString, MinLength, MaxLength, IsNotEmpty } from 'class-validator';
 
 export class AuthSignupDto {
 
@@ -11,6 +11,9 @@ export class AuthSignupDto {
   
     email: string;
   
+    @IsString()
+    @MinLength(8)
+    @MaxLength(20)
     password: string;
       
     gender: string;
@@ -41,9 +44,9 @@ export class AuthSignupDto {
       
     income: string;
       
-    height: number;
+    height: string;
       
-    weight: number;
+    weight: string;
       
     mother_tongue: string;
       

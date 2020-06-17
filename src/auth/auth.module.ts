@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, Logger } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -13,7 +13,6 @@ import { JwtStrategy } from './jwt-strategy';
         PassportModule.register({ defaultStrategy: 'jwt' }),
         JwtModule.register({
             secret: 'process.env.JWT_SECRET',
-            // secret: 'process.env.JWT_SECRET',
             signOptions: { expiresIn: 3600 }
         }),
     ],
@@ -28,4 +27,11 @@ import { JwtStrategy } from './jwt-strategy';
     ]
 })
 
-export class AuthModule {}
+export class AuthModule {
+    constructor() {
+        const logger = new Logger()
+        logger.log(process.env.JWT_SECRET, "Auth module");
+        console.log(process.env.JWT_SECRET, "Auth module");
+    }
+    
+}
