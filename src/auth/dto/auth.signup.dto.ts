@@ -1,4 +1,4 @@
-import { IsString, MinLength, MaxLength, IsNotEmpty } from 'class-validator';
+import { IsString, MinLength, MaxLength, IsNotEmpty, IsEmail, IsOptional } from 'class-validator';
 
 export class AuthSignupDto {
 
@@ -9,6 +9,8 @@ export class AuthSignupDto {
     @MaxLength(20)
     name: string;
   
+    @IsEmail()
+    @IsOptional()
     email: string;
   
     @IsString()
@@ -16,6 +18,7 @@ export class AuthSignupDto {
     @MaxLength(20)
     password: string;
       
+    @IsNotEmpty()
     gender: string;
   
     age: number;
@@ -44,9 +47,9 @@ export class AuthSignupDto {
       
     income: string;
       
-    height: string;
+    height: number;
       
-    weight: string;
+    weight: number;
       
     mother_tongue: string;
       
@@ -68,55 +71,55 @@ export class AuthSignupDto {
     // Horoscope details
 
     // Rasi
-     
+    
     rasibox11: string;
-     
+    
     rasibox12: string;
-     
+    
     rasibox13: string;
-     
+    
     rasibox14: string;
-     
+    
     rasibox15: string;
-     
+    
     rasibox16: string;
-     
+    
     rasibox17: string;
-     
+    
     rasibox18: string;
-     
+    
     rasibox19: string;
-     
+    
     rasibox110: string;
-     
+    
     rasibox111: string;
-     
+    
     rasibox112: string;
     
     // Navamsam
-     
+    
     rasibox21: string;
-     
+    
     rasibox22: string;
-     
+    
     rasibox23: string;
-     
+    
     rasibox24: string;
-     
+    
     rasibox25: string;
-     
+    
     rasibox26: string;
-     
+    
     rasibox27: string;
-     
+    
     rasibox28: string;
-     
+    
     rasibox29: string;
-     
+    
     rasibox210: string;
-     
+    
     rasibox211: string;
-     
+    
     rasibox212: string;
 
 
@@ -131,8 +134,9 @@ export class AuthSignupDto {
      
     mother_occupation: string;
      
+    @IsNotEmpty()
     contact_main: number;
-     
+    
     contact_sup: number;
      
     sibiling_count: number;
@@ -160,9 +164,9 @@ export class AuthSignupDto {
      
     age_difference: string;
      
-    expected_height: string;
+    expected_height: number;
      
-    expected_weight: string;
+    expected_weight: number;
      
     expectations: string;
 }

@@ -19,15 +19,15 @@ export class ProfileRepository extends Repository<Profile> {
         }
 
         if(from_age && to_age) {
-            query.andWhere('profile.age >= :from_age AND profile.age < :to_age', { from_age, to_age });
+            query.andWhere('profile.age >= :from_age AND profile.age <= :to_age', { from_age, to_age });
         }
 
         if(from_height && to_height) {
-            query.andWhere('profile.height >= :from_height AND profile.height < :to_height', { from_height, to_height });
+            query.andWhere('profile.height >= :from_height AND profile.height <= :to_height', { from_height, to_height });
         }
 
         if(from_weight && to_weight) {
-            query.andWhere('profile.weight >= :from_weight AND profile.weight < :to_weight', { from_weight, to_weight });
+            query.andWhere('profile.weight >= :from_weight AND profile.weight <= :to_weight', { from_weight, to_weight });
         }
 
         const profiles = await query.getMany();

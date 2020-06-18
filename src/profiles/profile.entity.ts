@@ -1,4 +1,4 @@
-import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique } from "typeorm";
+import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique, CreateDateColumn } from "typeorm";
 
 @Entity()
 @Unique(['email'])
@@ -9,23 +9,26 @@ export class Profile extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id: number;
+
+    @CreateDateColumn({ type: 'date', default: () => 'CURRENT_TIMESTAMP' })
+    date_of_registration: Date;
     
-    @Column({ nullable: true })
+    @Column({ nullable: false })
     name: string;
 
     @Column({ nullable: true })
     email: string;
 
-    @Column({ nullable: true })
+    @Column({ nullable: false })
     password: string;
     
-    @Column({ nullable: true })
+    @Column({ nullable: false })
     gender: string;
 
     @Column({ nullable: true })
     age: number;
     
-    @Column({ nullable: true })
+    @Column({ nullable: true, type: 'date' })
     dob: string;
 
     @Column({ nullable: true })
@@ -61,11 +64,11 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     income: string;
     
-    @Column({ nullable: true, type: 'real' })
-    height: string;
+    @Column({ type: "decimal", nullable: true })
+    height: number;
     
-    @Column({ nullable: true, type: 'real' })
-    weight: string;
+    @Column({ type: "decimal", nullable: true })
+    weight: number;
     
     @Column({ nullable: true })
     mother_tongue: string;
@@ -228,11 +231,11 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     age_difference: string;
     
-    @Column({ nullable: true, type: 'real' })
-    expected_height: string;
+    @Column({ type: "decimal", nullable: true })
+    expected_height: number;
     
-    @Column({ nullable: true, type: 'real' })
-    expected_weight: string;
+    @Column({ type: "decimal", nullable: true })
+    expected_weight: number;
     
     @Column({ nullable: true })
     expectations: string;
