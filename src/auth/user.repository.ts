@@ -10,7 +10,7 @@ export class UserRepository extends Repository<Profile> {
 
     async signUp(authSignupDto: AuthSignupDto): Promise<void> {
         const profile = new Profile();
-
+        console.log(authSignupDto, 'in repository');
         const { name, email, password, gender, age, dob, birth_time, birth_place, religion, caste, subcaste, gothram, star, qualification, job, workplace, income, height, weight, mother_tongue, known_language, nativity, marital_status, talents, hobbies, vehicle_driving, disabilities, rasibox11, rasibox12, rasibox13, rasibox14, rasibox15, rasibox16, rasibox17, rasibox18, rasibox19, rasibox110, rasibox111, rasibox112, rasibox21, rasibox22, rasibox23, rasibox24, rasibox25, rasibox26, rasibox27, rasibox28, rasibox29, rasibox210, rasibox211, rasibox212, father_name, father_occupation, mother_name, mother_occupation, contact_main, contact_sup, sibiling_count, family_status, properties, other_details, expected_qualification, expected_place, expected_income, expected_caste, expected_subcaste, expected_marital_status, age_difference, expected_height, expected_weight, expectations } = authSignupDto;
 
         profile.name = name,

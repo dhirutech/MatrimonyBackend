@@ -1,4 +1,5 @@
 import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique, CreateDateColumn } from "typeorm";
+import { IsOptional } from "class-validator";
 
 @Entity()
 @Unique(['email'])
@@ -28,7 +29,7 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     age: number;
     
-    @Column({ nullable: true, type: 'date' })
+    @Column({  type: 'date', nullable: true })
     dob: string;
 
     @Column({ nullable: true })
@@ -190,7 +191,7 @@ export class Profile extends BaseEntity {
     mother_occupation: string;
     
     @Column({ nullable: false })
-    contact_main: number;
+    contact_main: string
     
     @Column({ nullable: true })
     contact_sup: number;

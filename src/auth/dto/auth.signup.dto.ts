@@ -135,7 +135,7 @@ export class AuthSignupDto {
     mother_occupation: string;
      
     @IsNotEmpty()
-    contact_main: number;
+    contact_main: string;
     
     contact_sup: number;
      
