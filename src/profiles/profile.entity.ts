@@ -14,6 +14,9 @@ export class Profile extends BaseEntity {
     @CreateDateColumn({ type: 'date', default: () => 'CURRENT_TIMESTAMP' })
     date_of_registration: Date;
     
+    @Column("text")
+    image: string;
+
     @Column({ nullable: false })
     name: string;
 
@@ -66,9 +69,11 @@ export class Profile extends BaseEntity {
     income: string;
     
     @Column({ type: "decimal", nullable: true })
+    @IsOptional()
     height: number;
     
     @Column({ type: "decimal", nullable: true })
+    @IsOptional()
     weight: number;
     
     @Column({ nullable: true })
@@ -194,6 +199,7 @@ export class Profile extends BaseEntity {
     contact_main: string
     
     @Column({ nullable: true })
+    @IsOptional()
     contact_sup: number;
     
     @Column({ nullable: true })

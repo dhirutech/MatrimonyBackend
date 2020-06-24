@@ -6,9 +6,14 @@ import { GetProfilesFilterDto } from "./dto/get-profiles-filter.dto";
 export class ProfileRepository extends Repository<Profile> {
     
     async getProfiles(filterDto: GetProfilesFilterDto): Promise<Profile[]> {
-        const { name, from_age, to_age, caste, from_height, to_height, from_weight, to_weight } = filterDto;
+        const { id, name, gender, from_age, to_age, caste, from_height, to_height, from_weight, to_weight } = filterDto;
 
         const query = this.createQueryBuilder('profile');
+
+        
+        if(id) {
+            query.andWhere('profile.id = :id', { id });
+        }
 
         if(name) {
             query.andWhere('profile.name LIKE :name', { name: `%${name}%` });
@@ -16,6 +21,10 @@ export class ProfileRepository extends Repository<Profile> {
 
         if(caste) {
             query.andWhere('profile.caste = :caste', { caste });
+        }
+
+        if(gender) {
+            query.andWhere('profile.gender = :gender', { gender });
         }
 
         if(from_age && to_age) {

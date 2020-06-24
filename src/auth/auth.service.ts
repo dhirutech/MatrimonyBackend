@@ -27,7 +27,7 @@ export class AuthService {
         if(!name) {
             throw new UnauthorizedException('Invalid Credentials');
         }
-        console.log(this.configService.get('JWT_SECRET'), 'From service');
+        // console.log(this.configService.get('JWT_SECRET'), 'From service');
         const payload: JwtPayload = { name };
         const accessToken = await this.jwtService.sign(payload);
         return { accessToken };

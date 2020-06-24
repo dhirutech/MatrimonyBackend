@@ -1,6 +1,10 @@
 import { IsOptional, IsNotEmpty, IsString } from 'class-validator';
 
 export class GetProfilesFilterDto {
+    
+    @IsOptional()
+    @IsNotEmpty()
+    id: string;
 
     @IsString()
     @IsOptional()
@@ -11,6 +15,10 @@ export class GetProfilesFilterDto {
     @IsNotEmpty()
     caste: string;
         
+    @IsOptional()
+    @IsNotEmpty()
+    gender: string;
+
     @IsOptional()
     @IsNotEmpty()
     from_age: number;

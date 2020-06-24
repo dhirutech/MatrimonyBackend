@@ -1,7 +1,8 @@
-import { Controller, Post, Body, ValidationPipe } from '@nestjs/common';
+import { Controller, Post, Body, ValidationPipe, UseInterceptors, UploadedFile } from '@nestjs/common';
 import { AuthSignupDto } from './dto/auth.signup.dto';
 import { AuthService } from './auth.service';
 import { AuthSigninDto } from './dto/auth.signin.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('auth')
 export class AuthController {
@@ -15,9 +16,15 @@ export class AuthController {
         return this.authService.signUp(authSignupDto);
     }
 
+    @Post('/upload')
+    @UseInterceptors(FileInterceptor('file'))
+    uploadFile(@UploadedFile() file) {
+    console.log(file);
+    }
+
     @Post('/signin')
     signIn(@Body() authSigninDto: AuthSigninDto): Promise<{ accessToken: string }> {
-        console.log(process.env.JWT_SECRET, 'From controller');
+        // console.log(process.env.JWT_SECRET, 'From controller');
         return this.authService.signIn(authSigninDto);
 
     }

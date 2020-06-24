@@ -4,6 +4,8 @@ export class AuthSignupDto {
 
     // For storing personal details
 
+    image: string;
+
     @IsString()
     @MinLength(4)
     @MaxLength(20)
@@ -47,8 +49,10 @@ export class AuthSignupDto {
       
     income: string;
       
+    @IsOptional()
     height: number;
       
+    @IsOptional()
     weight: number;
       
     mother_tongue: string;
@@ -137,6 +141,7 @@ export class AuthSignupDto {
     @IsNotEmpty()
     contact_main: string;
     
+    @IsOptional()
     contact_sup: number;
      
     sibiling_count: number;
