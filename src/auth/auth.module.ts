@@ -31,7 +31,6 @@ export class AuthModule {
     constructor() {
         const logger = new Logger()
         logger.log(process.env.JWT_SECRET, "Auth module");
-        console.log(process.env.JWT_SECRET, "Auth module");
     }
     
 }

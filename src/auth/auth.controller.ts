@@ -24,7 +24,6 @@ export class AuthController {
 
     @Post('/signin')
     signIn(@Body() authSigninDto: AuthSigninDto): Promise<{ accessToken: string }> {
-        // console.log(process.env.JWT_SECRET, 'From controller');
         return this.authService.signIn(authSigninDto);
 
     }

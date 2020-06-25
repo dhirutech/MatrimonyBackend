@@ -20,11 +20,4 @@ export class ProfilesController {
         return this.profilesService.getProfileById(id)
     }
 
-    // @Delete('/:id')
-    // deleteAccount(
-    //   @Param('id', ParseIntPipe) id: number,
-    //   @GetUser() profile: Profile,
-    // ): Promise<void> {
-    //   return this.profilesService.deleteAccount(id, profile);
-    // }
 }

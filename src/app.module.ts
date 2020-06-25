@@ -11,7 +11,6 @@ import { AuthModule } from './auth/auth.module';
     ProfilesModule,
     AuthModule,
     ConfigModule.forRoot('src/.env')
-    // ConfigModule.forRoot('src/.env')
   ]
 })
 export class AppModule {}

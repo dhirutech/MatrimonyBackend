@@ -24,15 +24,4 @@ export class ProfilesService {
         return found;
     }
 
-    // async deleteAccount(
-    //     id: number,
-    //     profile: Profile,
-    //   ): Promise<void> {
-    //     const result = await this.profileRepository.delete({ id, profile.id });
-    
-    //     if (result.affected === 0) {
-    //       throw new NotFoundException(`Task with ID "${id}" not found`);
-    //     }
-    //   }
-    
 }
