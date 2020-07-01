@@ -2,7 +2,7 @@ import { BaseEntity, Column, PrimaryGeneratedColumn, Entity, Unique, CreateDateC
 import { IsOptional } from "class-validator";
 
 @Entity()
-@Unique(['email'])
+// @Unique(['email'])
 export class Profile extends BaseEntity {
     
 
@@ -45,6 +45,9 @@ export class Profile extends BaseEntity {
     religion: string;
     
     @Column({ nullable: true })
+    division: string;
+    
+    @Column({ nullable: true })
     caste: string;
     
     @Column({ nullable: true })
@@ -55,6 +58,9 @@ export class Profile extends BaseEntity {
     
     @Column({ nullable: true })
     star: string;
+    
+    @Column({ nullable: true })
+    rasi: string;
     
     @Column({ nullable: true })
     qualification: string;
@@ -72,8 +78,8 @@ export class Profile extends BaseEntity {
     @IsOptional()
     height: number;
     
-    @Column({ type: "decimal", nullable: true })
-    @IsOptional()
+    @Column({ nullable: true })
+    // @IsOptional()
     weight: number;
     
     @Column({ nullable: true })
@@ -81,10 +87,7 @@ export class Profile extends BaseEntity {
     
     @Column({ nullable: true })
     known_language: string;
-    
-    @Column({ nullable: true })
-    nativity: string;
-    
+
     @Column({ nullable: true })
     marital_status: string;
     
@@ -196,14 +199,14 @@ export class Profile extends BaseEntity {
     mother_occupation: string;
     
     @Column({ nullable: false })
-    contact_main: string
+    contact_main: string;
     
     @Column({ nullable: true })
     @IsOptional()
-    contact_sup: number;
+    contact_sup: string;
     
     @Column({ nullable: true })
-    sibiling_count: number;
+    sibiling_count: string;
     
     @Column({ nullable: true })
     family_status: string;
@@ -238,11 +241,11 @@ export class Profile extends BaseEntity {
     @Column({ nullable: true })
     age_difference: string;
     
-    @Column({ type: "decimal", nullable: true })
-    expected_height: number;
+    @Column({ nullable: true })
+    expected_height: string;
     
-    @Column({ type: "decimal", nullable: true })
-    expected_weight: number;
+    @Column({ nullable: true })
+    expected_weight: string;
     
     @Column({ nullable: true })
     expectations: string;

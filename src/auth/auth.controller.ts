@@ -2,7 +2,7 @@ import { Controller, Post, Body, ValidationPipe, UseInterceptors, UploadedFile }
 import { AuthSignupDto } from './dto/auth.signup.dto';
 import { AuthService } from './auth.service';
 import { AuthSigninDto } from './dto/auth.signin.dto';
-import { FileInterceptor } from '@nestjs/platform-express';
+// import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('auth')
 export class AuthController {
@@ -16,11 +16,11 @@ export class AuthController {
         return this.authService.signUp(authSignupDto);
     }
 
-    @Post('/upload')
-    @UseInterceptors(FileInterceptor('file'))
-    uploadFile(@UploadedFile() file) {
-    console.log(file);
-    }
+    // @Post('/upload')
+    // @UseInterceptors(FileInterceptor('file'))
+    // uploadFile(@UploadedFile() file) {
+    // console.log(file);
+    // }
 
     @Post('/signin')
     signIn(@Body() authSigninDto: AuthSigninDto): Promise<{ accessToken: string }> {

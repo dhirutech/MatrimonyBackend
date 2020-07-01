@@ -11,8 +11,8 @@ export class AuthSignupDto {
     @MaxLength(20)
     name: string;
   
-    @IsEmail()
     @IsOptional()
+    // @IsEmail()
     email: string;
   
     @IsString()
@@ -32,7 +32,9 @@ export class AuthSignupDto {
     birth_place: string;
       
     religion: string;
-      
+    
+    division: string;
+    
     caste: string;
       
     subcaste: string;
@@ -40,6 +42,8 @@ export class AuthSignupDto {
     gothram: string;
       
     star: string;
+
+    rasi: string;
       
     qualification: string;
       
@@ -58,8 +62,6 @@ export class AuthSignupDto {
     mother_tongue: string;
       
     known_language: string;
-      
-    nativity: string;
       
     marital_status: string;
       
@@ -142,9 +144,9 @@ export class AuthSignupDto {
     contact_main: string;
     
     @IsOptional()
-    contact_sup: number;
+    contact_sup: string;
      
-    sibiling_count: number;
+    sibiling_count: string;
      
     family_status: string;
      
@@ -169,9 +171,9 @@ export class AuthSignupDto {
      
     age_difference: string;
      
-    expected_height: number;
+    expected_height: string;
      
-    expected_weight: number;
+    expected_weight: string;
      
     expectations: string;
 }
