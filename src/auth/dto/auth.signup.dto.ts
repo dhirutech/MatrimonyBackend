@@ -6,6 +6,10 @@ export class AuthSignupDto {
 
     image: string;
 
+    image1: string;
+
+    image2: string;
+
     @IsString()
     @MinLength(4)
     @MaxLength(20)

@@ -14,8 +14,14 @@ export class Profile extends BaseEntity {
     @CreateDateColumn({ type: 'date', default: () => 'CURRENT_TIMESTAMP' })
     date_of_registration: Date;
     
-    @Column("text")
+    @Column("text", { nullable: true })
     image: string;
+
+    @Column("text", { nullable: true })
+    image1: string;
+    
+    @Column("text", { nullable: true })
+    image2: string;
 
     @Column({ nullable: false })
     name: string;
