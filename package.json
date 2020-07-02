@@ -16,7 +16,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch nodemon",
     "start:debug": "nest start --debug --watch nodemon",
-    "start:prod": "node dist/src/main.js",
+    "start:prod": "node dist/main",
     "prestart:prod": "rimraf dist && npm run build",
     "postinstall": "npm run prestart:prod",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
