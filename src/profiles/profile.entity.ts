@@ -81,11 +81,9 @@ export class Profile extends BaseEntity {
     income: string;
     
     @Column({ type: "decimal", nullable: true })
-    @IsOptional()
     height: number;
     
-    @Column({ nullable: true })
-    // @IsOptional()
+    @Column({ type: "decimal", nullable: true })
     weight: number;
     
     @Column({ nullable: true })
