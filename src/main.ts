@@ -8,6 +8,6 @@ async function bootstrap() {
     new FastifyAdapter({ bodyLimit: 10048576 }),
   )
   app.enableCors();
-  await app.listen(+process.env.PORT || 3000);
+  await app.listen(+process.env.PORT || 3000, '0.0.0.0');
 }
 bootstrap();
