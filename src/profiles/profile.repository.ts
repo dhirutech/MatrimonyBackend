@@ -1,6 +1,8 @@
 import { Repository, EntityRepository } from "typeorm";
 import { Profile } from "./profile.entity";
 import { GetProfilesFilterDto } from "./dto/get-profiles-filter.dto";
+import { UpdateProfileDto } from "./dto/update-profiles.dto";
+import { ConflictException, InternalServerErrorException } from "@nestjs/common";
 
 @EntityRepository(Profile)
 export class ProfileRepository extends Repository<Profile> {
