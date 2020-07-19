@@ -111,7 +111,7 @@ export class UserRepository extends Repository<Profile> {
         const user_email = await this.findOne({ email });
 
         if (user_id || user_email) {
-            if(user_id && user_id.password === password) { return user_id.name; }
+            if(user_id && user_id.password === password) { return id.toString(); }
             if(user_email && user_email.password === password) { return user_email.name; }
         } else { 
             return null; 

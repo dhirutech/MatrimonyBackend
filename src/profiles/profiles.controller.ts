@@ -28,7 +28,7 @@ export class ProfilesController {
     }
 
     @Patch('/:id')
-    updateTaskStatus(
+    updateProfileStatus(
         @Param('id', ParseIntPipe) id: number,
         @Body(ValidationPipe) updateProfileDto: UpdateProfileDto
     ): Promise<Profile> {
